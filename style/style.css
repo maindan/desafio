@@ -6,7 +6,7 @@
     --text-color: #FFF;
     --placeholder-color: #ffffffb0;
     --border-color: #FFCA00;
-    --hover-color: rgba(255, 255, 255, 0.2);
+    --hover-color: rgba(255, 255, 255, 0.5);
 
     --bt-primary-color: transparent;
     --bt-border: #FFF;
@@ -157,6 +157,7 @@ main aside {
     outline: none;
     resize: none;
     padding: 10px;
+    font-size: 25px;
 }
 
 .show-content img {
@@ -171,7 +172,7 @@ main aside {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .no-content img {
@@ -206,6 +207,7 @@ footer section {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    border: 1px solid white;
 }
 
 footer section h3 {
@@ -243,7 +245,7 @@ footer section ul i:hover {
 
 footer hr {
     width: 1px;
-    height: 50%;
+    height: 30%;
     background: rgba(255, 255, 255, 0.2);
     margin: 0px 10px 0px 10px;
 }
