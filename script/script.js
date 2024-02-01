@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     encodeBt.addEventListener('click', () => {
         if(content.value.trim() !== '') {
             if(!verifySpecial(content.value) && !verifyUpper(content.value)){
-                codeArea.textContent = encryptor.encode(content.value);
+                codeArea.value = encryptor.encode(content.value);
                 cleanTexts();
                 
             } else {
@@ -44,11 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if(content.value.trim() !== '') {
             if(!verifySpecial(content.value) && !verifyUpper(content.value)){
                 if(verifyCode(content.value)) {
-                    codeArea.textContent = encryptor.decode(content.value);
+                    codeArea.value = encryptor.decode(content.value);
                     cleanTexts()
                     content.value = '';
                 } else {
-                    openModal('ops, você digitou algum caractere inválido!')
                     changeCodeArea()
                     content.value = '';
                 }
@@ -61,9 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     copyBt.addEventListener('click', () => {
-        navigator.clipboard.writeText(codeArea.textContent);
+        navigator.clipboard.writeText(codeArea.value);
         openModal('Texto copiado!');
         changeCodeArea();
+        codeArea.innerHTML = '';
         content.value = '';
     });
 
