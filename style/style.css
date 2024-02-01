@@ -25,16 +25,14 @@
     color: var(--text-color);
 }
 
-html {
-    min-width: 100vw;
-    min-height: 100%;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100vh;
     background-color: var(--bg-color);
 }
 
@@ -145,8 +143,8 @@ main section:hover, aside:hover {
 }
 
 .button {
-    width: 250px;
-    height: 60px;
+    width: 200px;
+    height: 50px;
     background: none;
     border: 1px solid var(--bt-border);
     border-radius: 20px;
@@ -174,10 +172,10 @@ main aside {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 50px 10px;
     display: none;
 }
 
@@ -236,7 +234,7 @@ footer {
 
 footer section {
     width: 30%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -285,4 +283,96 @@ footer hr {
 footer p {
     text-align: center;
     font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+    html, body{
+        min-width: 100vw;
+        min-height: 100%;
+    }
+
+    main {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: max-content;
+    }
+
+    main section {
+        width: 90%;
+        height: fit-content;
+        gap: 5px;
+    }
+
+    .button {
+        width: 150px;
+        height: 50px;
+    }
+
+    main aside {
+        width: 90%;
+        height: fit-content;
+    }
+
+    .no-content {
+        height: fit-content;
+    }
+
+    .no-content img {
+        display: none;
+    }
+
+    .show-content {
+        height: auto;
+        padding: 10px;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .show-content textarea {
+        height: 300px;
+    }
+
+    .show-content button {
+        width: 150px;
+    }
+
+    .show-content img {
+        display: none;
+    }
+
+    footer {
+        position: relative
+    }
+
+    /* footer hr {
+        display: none;
+    } */
+
+    footer section ul li {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    footer section ul i {
+        font-size: 25px;
+    }
+
+    /* footer p {
+        display: none;
+    } */
+}
+
+@media only screen and (max-width: 700px) {
+    footer {
+        position: relative;
+        padding: 5px;
+    }
+
+    footer hr {
+        display: none;
+    }
+
+    footer p {
+        display: none;
+    }
 }
