@@ -25,15 +25,17 @@ encodeBt.addEventListener('click', () => {
 })
 
 decodeBt.addEventListener('click', () => {
-    if(content.value.trim() !== '') {
-        if(!verifySpecial(content.value) && !verifyUpper(content.value)){
-            codeArea.textContent = encryptor.decode(content.value);
-            cleanTexts()
-            content.value = '';
-        } else {
-            alert('não passou');
-            changeCodeArea();
-            content.value = '';
+    if(verifyCode(content.value)) {
+        if(content.value.trim() !== '') {
+            if(!verifySpecial(content.value) && !verifyUpper(content.value)){
+                codeArea.textContent = encryptor.decode(content.value);
+                cleanTexts()
+                content.value = '';
+            } else {
+                alert('não passou');
+                changeCodeArea();
+                content.value = '';
+            }
         }
     } else {
         changeCodeArea()
@@ -87,6 +89,21 @@ function verifyUpper(frase) {
         }
     }
     return false;
+}
+
+/* validando decodificador */
+
+function verifyCode(frase) {
+    fraseContent = frase.split(' ');
+    contentKeys = [/ai/, /enter/, /imes/, /ober/, /ufat/]
+    for(let i = 0; i < fraseContent.length; i++) {
+        for(j = 0; j < contentKeys.length; j++){
+          if(fraseContent[i].match(contentKeys[j])){
+            return true
+          }
+        }
+    }
+    return false
 }
 
 
