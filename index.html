@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <title>Dan-Encrypt</title>
 </head>
 <body>
     <header>
-        <h1>Encode</h1>
+        <h1>Dan-Encrypt</h1>
     </header>
+    <dialog id="modal">
+        <p id="dialog-text"></p>
+        <button id="dialog-close" class="button" onclick="closeModal()">Fechar</button>
+    </dialog>
     <main>
         <section>
             <div class="textinput">
                 <textarea id="textarea" cols="30" rows="10" placeholder="Insira texto aqui"></textarea>
             </div>
+            <p>Apenas são aceitas palavras sem acentos, em minúsculas e sem caracteres especiais!</p>
             <div class="buttons">
                 <button class="button" id="encode">Encriptar</button>
                 <button class="button" id="decode">Desencriptar</button>
@@ -24,11 +30,11 @@
         <aside>
             <div class="show-content">
                 <textarea id="content-textarea" cols="10" rows="30"></textarea>
-                <img src="assets/Treasure-cuate.svg" alt="">
+                <img src="assets/code.svg" alt="">
                 <button class="button" id="copy-bt">Copiar Texto</button>
             </div>
             <div class="no-content">
-                <img src="assets/Questions-bro.svg" alt="">
+                <img src="assets/question.gif" alt="">
                 <h3>Nenhuma mensagem encontrada</h3>
                 <p>Digite um texto que você deseja criptografar ou descriptografar</p>
             </div>
